@@ -19,9 +19,11 @@ cenAfrica<-read.csv(file="central_africa_aides.csv",header=TRUE)
 Three new preventative aides drugs were tested in clinical trials in 2015. The trial designs were modeled after the famous RV_144 Aides Trials in Tailand in 2009.  Analyze and report on the apparent effectiveness of the three different drugs. Does sex of the participant seem to be a factor for any of the drugs?
 
 
-# South Carolina
+
 
 ##Graphical Results 
+
+##South Carolina
 
 We will subset the data by sex to see if the drug is sex specific.
 
@@ -56,7 +58,6 @@ As expected the people who got aides slightly more were the people who took the 
 
 We will subset the data by sex to see if the drug is sex specific.
 
-#Graphical Results
 
 ###Central Africa Aids Results (Males)
 ```{r}
@@ -85,7 +86,6 @@ This drug helped to reduce the overall spread of Aids. More people got Aids when
 
 We will subset the data by sex to see if the drug is sex specific.
 
-#Graphical Results
 
 ###Korea Aids Results (Males)
 ```{r}
