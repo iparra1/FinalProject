@@ -21,21 +21,93 @@ Three new preventative aides drugs were tested in clinical trials in 2015. The t
 
 # South Carolina
 
+##Graphical Results 
+
 We will subset the data by sex to see if the drug is sex specific.
 
+###South Carolina Aids Results (Males)
+
+```{r}
+ScarolinaM <- filter(Scarolina,sex=="M")
+barchartGC(~infected + group, data=ScarolinaM, type="percent")
+```
+
+More males infected with aids received the actual drug. Just slightly more males that have not been infected with aids received the placebo drug.
+
+###South Carolina Aids Results (Females)
+
+```{r}
+ScarolinaF <- filter(Scarolina,sex=="F")
+barchartGC(~infected + group, data=ScarolinaF, type="percent")
+```
+
+More females infected with aids received the placebo drug. Just slightly more females that were not infected with aids received the actual drug.
+
+###South Carolina Aids Results (Both)
+
+```{r}
+
+barchartGC(~infected + group, data=Scarolina, type="percent")
+```
+
+As expected the people who got aides slightly more were the people who took the placebo.
 
 # Central Africa
 
 We will subset the data by sex to see if the drug is sex specific.
 
+#Graphical Results
 
+###Central Africa Aids Results (Males)
+```{r}
+cenAfricaM <- filter(cenAfrica,sex=="M")
+barchartGC(~infected + group, data=cenAfricaM, type="percent")
+```
+
+More males infected with aids received the placebo drug. Half of the males that were not infected with aids received the actual drug and the other half received the placebo.
+
+###Central Africa Aids Results (Females)
+```{r}
+cenAfricaF <- filter(cenAfrica,sex=="F")
+barchartGC(~infected + group, data=cenAfricaF, type="percent")
+```
+
+More females were infected with aids received the placebo. Just slightly more females that were not infected with aids received the actual drug.
+
+###Central Africa Aids Results (Both)
+```{r}
+barchartGC(~infected + group, data=cenAfrica, type="percent")
+```
+
+This drug helped to reduce the overall spread of Aids. More people got Aids when they took the placebo.
 
 # Korea
 
 We will subset the data by sex to see if the drug is sex specific.
 
+#Graphical Results
 
+###Korea Aids Results (Males)
+```{r}
+koreaM <- filter(korea,sex=="M")
+barchartGC(~infected + group, data=koreaM, type="percent")
+```
+More males that were infected with aids received the placebo. Just slightly more males that were not infected with aids received the actual drug.
 
+###Korea Aids Results (Females)
+```{r}
+koreaF <- filter(korea,sex=="F")
+barchartGC(~infected + group, data=koreaF, type="percent")
+```
+More females that were infected with aids received the actual drug. Just slightly more females that were not infected with aids received the placebo.
+
+###Korea Aids Results (Both)
+```{r}
+barchartGC(~infected + group, data=korea, type="percent")
+```
+Based on the graph the people who had the placebo got aids much more than the drug. This drug worked to prevent the spread of aids.
+
+Based on our graphical results, the relationship shown between the groups from the data is that the groups receiving the drug are not only sex specific, but also disease specific. You can see that sometimes there were more people that have not been infected with aids received either the actual drug or placebo. This was to see if the actual drug would be able to prevent aids completely.
 
 
 
