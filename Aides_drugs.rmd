@@ -191,18 +191,27 @@ In South Carolina and Central Africa, more females that were infected with aids 
 ##South Carolina
 
 ###Both 
+Null- The aids drug is not effective. (Independent)
+
+Alternative- The aids drug is effective.
 ```{r}
 chisqtestGC(Scarolina_table)
 ```
 The p-value is 89%, we accept the null hypothesis. We can assume that the drug is not effective.
 
 ###Males
+Null- The aids drug is not specific to males. (Independent)
+
+Alternative- The aids drug is specific to males.
 ```{r}
 chisqtestGC(ScarolinaM_table)
 ```
 The P-value is 9%, greater than 5%, so we will accept the null hypothesis and assume that the drug is not specific to males.
 
 ###Females
+Null- The aids drug is not specific to females. (Independent)
+
+Alternative- The aids drug is specific to females.
 ```{r}
 chisqtestGC(ScarolinaF_table)
 ```
@@ -212,6 +221,9 @@ The P-value is 2% which is obviously less than 5%. Due to this we will reject th
 ##Central Africa
 
 ###Both
+Null- The aids drug is not effective. (Inependent)
+
+Alternative-  The aids drug is effective.
 ```{r}
 chisqtestGC(cenAfrica_table)
 ```
@@ -219,6 +231,9 @@ The P-value is 57%, accepting the null hypothesis that the drug in Central Afric
 
 
 ###Males
+Null- The aids drug is not specific to males. (Independent)
+
+Alternative- The aids drug is specific to males.
 ```{r}
 chisqtestGC(cenAfricaM_table)
 ```
@@ -226,6 +241,9 @@ The P-value is 1, we accept the null hypothesis and assume that the drug is inde
 
 
 ###Females
+Null- The aids drug is not specific to females. (Independent)
+
+Alternative- The aids drug is specific to females
 ```{r}
 chisqtestGC(cenAfricaF_table)
 ```
@@ -236,6 +254,9 @@ The P-value is 50%, we accept the null hypothesis and assume that the drug is no
 ##Korea
 
 ###Both
+Null- The aids drug is not effective. (Inependent)
+
+Alternative- The aids drug is effective.
 ```{r}
 chisqtestGC(koreaF_table)
 ```
@@ -244,6 +265,9 @@ The P-value is 69%, we will accept the null hypothesis and assume that the drug 
 
 
 ###Males
+Null- The aids drug is not specific to males. (Inependent)
+
+Alternative- The aids drug is specific to males.
 ```{r}
 chisqtestGC(koreaM_table)
 ```
@@ -252,6 +276,9 @@ The P-value is zero, we reject the null hypothesis and assume that the drug is s
 
 
 ###Females
+Null-The aids drug is not specific to females. (Inependent)
+
+Alternative- The aids drug is specific to females.
 ```{r}
 chisqtestGC(koreaF_table)
 ```
