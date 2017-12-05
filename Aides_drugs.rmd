@@ -1,7 +1,7 @@
 ---
 title: "Aides Tests"
-author: "Dr K"
-date: "May 24, 2017"
+author: "Ilysa Parra "
+date: "December 4, 2017"
 output: html_document
 ---
 
@@ -109,5 +109,154 @@ Based on the graph the people who had the placebo got aids much more than the dr
 
 Based on our graphical results, the relationship shown between the groups from the data is that the groups receiving the drug are not only sex specific, but also disease specific. You can see that sometimes there were more people that have not been infected with aids received either the actual drug or placebo. This was to see if the actual drug would be able to prevent aids completely.
 
+#Numerical Results
+
+## South Carolina
+
+###Females
+```{r}
+ScarolinaF_table <- xtabs(~infected + group, data = ScarolinaF)
+rowPerc(ScarolinaF_table)
+
+```
+More females (61.17%) that were infected with aids received a placebo drug. More females (50.55%) that were not infected with aids received the actual drug in hopes to prevent it.
+
+###Males
+```{r}
+ScarolinaM_table <- xtabs(~infected + group, data = ScarolinaM)
+rowPerc(ScarolinaM_table)
+```
+More males (57.35%) that were infected with aids received the actual drug. More males (50.48%) that were not infected with aids received the placebo drug.
+
+###Both
+```{r}
+Scarolina_table <- xtabs(~infected + group, data = Scarolina)
+rowPerc(Scarolina_table)
+```
+More people overall that recieved the placebo got aids.
+
+##Central Africa
+
+###Female
+```{r}
+cenAfricaF_table <- xtabs(~infected + group, data = cenAfricaF)
+rowPerc(cenAfricaF_table)
+```
+More females (53.45%) that were infected with aids received the placebo drug. More females (50.17%) that were not infected with aids received the actual drug.
+
+###Males
+```{r}
+cenAfricaM_table <- xtabs(~infected + group, data = cenAfricaM)
+rowPerc(cenAfricaM_table)
+```
+More males (50.53%) that were infected with aids received the placebo drug. More males (50.02%) that were not infected with aids received the actual drug.
+
+###Both
+```{r}
+cenAfrica_table <- xtabs(~infected + group, data = cenAfrica)
+rowPerc(cenAfrica_table)
+```
+The results indicate that the drug was effective in preventing aids, as only 47% got aids compared to the 52% that took the placebo.
+
+##Korea
+
+###Females
+```{r}
+koreaF_table <- xtabs(~infected + group, data = koreaF)
+rowPerc(koreaF_table)
+```
+More females (65.43%) that were infected with aids received the actual drug. More females (50.57%) that were not infected with aids received the placebo.
+
+###Males
+```{r}
+koreaM_table <- xtabs(~infected + group, data = koreaM)
+rowPerc(koreaM_table)
+```
+More males (67.32%) that were infected with aids received the placebo drug. More males (51.25%) that were not infected with aids received the actual drug.
+
+###Both 
+```{r}
+korea_table <- xtabs(~infected + group, data= korea)
+rowPerc(korea_table)
+```
+The results show that the drug worked well in preventing aids because only 44% of people got aids, while 55% of people got aids while taking the placebo.
+
+###Discussion on Numerical Results
+In South Carolina and Central Africa, more females that were infected with aids received a placebo drug. But in Korea, more females with aids received the actual drug. In Central Africa and Korea, more males that were infected with aids received the placebo drug whereas more males in South Carolina received the actual drug. The drug may be sex specific, but it seems more like a geographical issue instead of a sex issue. We will perform a chisquare test to help determine our answer for our research question.
+
+
+#Inferential Results
+
+##South Carolina
+
+###Both 
+```{r}
+chisqtestGC(Scarolina_table)
+```
+The p-value is 89%, we accept the null hypothesis. We can assume that the drug is not effective.
+
+###Males
+```{r}
+chisqtestGC(ScarolinaM_table)
+```
+The P-value is 9%, greater than 5%, so we will accept the null hypothesis and assume that the drug is not specific to males.
+
+###Females
+```{r}
+chisqtestGC(ScarolinaF_table)
+```
+The P-value is 2% which is obviously less than 5%. Due to this we will reject the null hypothesis and assume that the aids drug is specific to females.
+
+
+##Central Africa
+
+###Both
+```{r}
+chisqtestGC(cenAfrica_table)
+```
+The P-value is 57%, accepting the null hypothesis that the drug in Central Africa is not effective
+
+
+###Males
+```{r}
+chisqtestGC(cenAfricaM_table)
+```
+The P-value is 1, we accept the null hypothesis and assume that the drug is independent and not specific to males.
+
+
+###Females
+```{r}
+chisqtestGC(cenAfricaF_table)
+```
+The P-value is 50%, we accept the null hypothesis and assume that the drug is not specific to females.
+
+
+
+##Korea
+
+###Both
+```{r}
+chisqtestGC(koreaF_table)
+```
+The P-value is 69%, we will accept the null hypothesis and assume that the drug is independent and not effective.
+
+
+
+###Males
+```{r}
+chisqtestGC(koreaM_table)
+```
+The P-value is zero, we reject the null hypothesis and assume that the drug is specific to males.
+
+
+
+###Females
+```{r}
+chisqtestGC(koreaF_table)
+```
+The P-value is 0 assuming that the drug is specific to females.
+
+#Inferential Conclusion
+Regarding each geographical location, more people that have have aids received the palcebo drug whereas more that did not have aids received the actual drug. In South Carolina and Central Africa, more females that were infected with aids received a placebo drug. But in Korea, more females with aids received the actual drug. In Central Africa and Korea, more males that were infected with aids received the placebo drug whereas more males in South Carolina received the actual drug. The drug may be sex specific, but it seems more like a geographical issue instead of a sex issue. We will perform a chisquare test to help determine our answer for our research question.
 
 
